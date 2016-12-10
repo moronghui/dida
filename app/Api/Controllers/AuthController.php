@@ -31,11 +31,11 @@ class AuthController extends BaseController
      */
     public function authenticate(Request $request)
     {
-        $code = $request->get('code');
-        $openid = new LoginController();
-        $openid = $openid->info($code,$_SERVER['REMOTE_ADDR']);
+        // $code = $request->get('code');
+        // $openid = new LoginController();
+        // $openid = $openid->info($code,$_SERVER['REMOTE_ADDR']);
 
-        $user = wechat::where("openid","=",$openid)->first();
+        $user = wechat::where("openid","=",'oAqeFws1vR9PHOzGi1vvWwb1kskE')->first();
         if (!$user){
           $arr = array ('status'=>"NO USER");
           return response()->json(compact('arr'));
